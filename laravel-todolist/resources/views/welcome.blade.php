@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app"></div>
-<link rel="stylesheet" href="{{ asset('css/bace.css') }}">
+<link rel="stylesheet" href="{{  asset('css/bace.css') }}">
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
