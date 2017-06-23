@@ -30,9 +30,11 @@
     .container{
         margin:0 auto;
         width: 500px;
+        height: 150px;
         overflow: hidden;
         text-overflow: ellipsis;
         text-align: center;
+        border-bottom:3px #d00 solid
     }
     .con-header{
         font:22px '微软雅黑';
@@ -43,11 +45,19 @@
         white-space:nowrap;
         display:inline-block;
         margin:15px 0;
+        font:22px '微软雅黑';
+        color: #d00;
     }
     .con-input{
-        width: 500px;
+        display: inline-block;
+        text-shadow: none;
+        text-decoration: none;
+        width: 466px;
         height: 40px;
         outline:none;
         border-radius: 5px;
+        font-size: 14px;
+        border:1px solid #d00;
+        padding:0 15px;
     }
 </style>
