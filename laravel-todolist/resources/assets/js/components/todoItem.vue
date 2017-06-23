@@ -4,15 +4,22 @@
             <input type="checkbox" v-model="todo.isDone">
             <span class="item-todo">{{todo.title}}</span>
         </div>
-        <button class="item-btn">已完成</button>
+        <button class="item-btn" @click="deleteItem">已完成</button>
     </div>
 </template>
 <script>
     export default{
-        props:['todo'],
+        props:['todo','deleteTodo'],
         data(){
             return {
 
+            }
+        },
+        methods:{
+            deleteItem(){
+                if(confirm('确定删除${todo.title}吗')){
+                    this.deleteTodo(this.todo)
+                }
             }
         }
     }

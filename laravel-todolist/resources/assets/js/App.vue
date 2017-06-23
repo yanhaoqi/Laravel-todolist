@@ -2,7 +2,7 @@
     <div id="app">
         <!--<router-view></router-view>-->
         <todo-header :addTodo="addTodo"></todo-header>
-        <todo-main :todos="todos"></todo-main>
+        <todo-main :todos="todos" :deleteTodo="deleteTodo"></todo-main>
         <todo-footer></todo-footer>
     </div>
 </template>
@@ -27,8 +27,16 @@
         },
         methods:{
             addTodo(todo){
-                this.todos.unshift(todo)
-                console.log(this.todos)
+                this.todos.unshift(todo);
+            },
+            deleteTodo(todo){
+                var num;
+                this.todos.map(function(item,index){
+                    if(item.title == todo.title){
+                        num = index;
+                    }
+                });
+                this.todos.splice(num,1);
             }
         }
     }
