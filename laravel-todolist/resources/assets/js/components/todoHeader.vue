@@ -37,7 +37,7 @@
         border-bottom:3px #d00 solid
     }
     .con-header{
-        font:22px '微软雅黑';
+        font:bold 24px '微软雅黑';
         display:inline-block;
         margin:15px 0;
     }

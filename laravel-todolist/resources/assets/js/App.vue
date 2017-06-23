@@ -3,7 +3,7 @@
         <!--<router-view></router-view>-->
         <todo-header :addTodo="addTodo"></todo-header>
         <todo-main :todos="todos" :deleteTodo="deleteTodo"></todo-main>
-        <todo-footer></todo-footer>
+        <todo-footer :rmTodos="rmTodos"></todo-footer>
     </div>
 </template>
 <script>
@@ -17,7 +17,7 @@
                 todos:[
                     {
                         title:'example：世界那么大，我想去看看',
-                        isDone:'true'
+                        isDone:true
                     }
                 ]
             }
@@ -37,6 +37,17 @@
                     }
                 });
                 this.todos.splice(num,1);
+            },
+            rmTodos(){
+                console.log('调用了rmTodos')
+                const me = this;
+                this.todos.map(function(item,index){
+                    console.log('进入了map中的函数')
+                    if(item.isDone == true){
+                        console.log('调用了map里的函数')
+                        me.todos.splice(index,1)
+                    }
+                })
             }
         }
     }
