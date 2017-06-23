@@ -36,6 +36,8 @@
     }
     .con-header{
         font:22px '微软雅黑';
+        display:inline-block;
+        margin:15px 0;
     }
     .con-repeat{
         white-space:nowrap;

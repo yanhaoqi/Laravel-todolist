@@ -2,7 +2,7 @@
     <div id="app">
         <!--<router-view></router-view>-->
         <todo-header :addTodo="addTodo"></todo-header>
-        <todo-main></todo-main>
+        <todo-main :todos="todos"></todo-main>
         <todo-footer></todo-footer>
     </div>
 </template>
@@ -14,7 +14,12 @@
     export default{
         data(){
             return {
-                todos:[]
+                todos:[
+                    {
+                        title:'example：世界那么大，我想去看看',
+                        isDone:'true'
+                    }
+                ]
             }
         },
         components:{
