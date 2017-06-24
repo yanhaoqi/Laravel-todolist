@@ -17,7 +17,8 @@
         },
         methods:{
             deleteItem(){
-                if(confirm('确定删除${todo.title}吗')){
+                const me = this
+                if(confirm('确定删除：'+ me.todo.title +'吗')){
                     this.deleteTodo(this.todo)
                 }
             }
