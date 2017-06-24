@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <span class="con-header">White Sdmething You May Forget</span>
+        <span class="con-header" @click="author">Click Me To Contact The Author</span>
         <input class="con-input" type="text" v-model="title" @keyup.enter="addItem" placeholder="   记录你想做的的事情！按enter键确认"><br>
         <span class="con-repeat">{{title}}</span>
     </div>
@@ -22,6 +22,9 @@
                 };
                 this.addTodo(todo);
                 this.title = null;
+            },
+            author(){
+                window.location = 'http://127.0.0.1:8000/#/author'
             }
         }
     }
