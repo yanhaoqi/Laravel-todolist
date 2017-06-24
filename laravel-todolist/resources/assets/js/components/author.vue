@@ -15,7 +15,7 @@
         data(){
             return {
                 isHint:false,
-                time:10
+                time:5
             }
         },
         methods:{
@@ -24,10 +24,14 @@
                  const me = this
                  setTimeout(function(){
                      me.isHint = false;
-                 },10000);
-                 setInterval(function(){
+                 },5000);
+                 clearInterval(me.timeInterval);
+                 me.timeInterval = setInterval(function(){
                      me.time--
                  },1000);
+                 if(this.time <= 0){
+                     this.time = 5
+                 }
                  this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
                      emulateJSON: true
                  }).then(function(response) {
