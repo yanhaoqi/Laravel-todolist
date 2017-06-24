@@ -39,11 +39,18 @@
             },
             rmTodos(){
                 const me = this;
-                this.todos.map(function(item,index){
-                    if(item.isDone == true){
-                        me.todos.splice(index,1)
+//                this.todos.map(function(item,index){
+//                    if(item.isDone == true){
+//                        me.todos.splice(index,1)
+//
+//                    }
+//                })
+                for (var i = 0; i < me.todos.length; i++) {
+                    if(me.todos[i].isDone == true){
+                        me.todos.splice(i,1)
+                        i--
                     }
-                })
+                }
             }
         }
     }
